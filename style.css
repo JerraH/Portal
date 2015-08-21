@@ -1,0 +1,74 @@
+.centerbox {
+	background-color: black;
+	opacity: .7;
+	width:70vw;
+	max-width:1000px;
+	height: 70vh;
+	margin-left: 15vw;
+	margin-right:15vw;
+	margin-top:15vh;
+	margin-bottom:15vh;
+	position: absolute;
+	z-index:999;
+}
+
+.container {
+	height:100vh;
+	width:100vw;
+	position:relative;
+}
+
+.bg {
+	width:100%;
+	height:100%;
+	display:flex;
+	flex-wrap: wrap;
+	flex-direction:row;
+	z-index:10;
+}
+
+html {
+	-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+*, *:after, *:before {
+	border: 1px black solid;
+	box-sizing: inherit;
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+}
+
+.center, .left, .right, .top, .bottom {
+	display:inline-block;
+	position:relative;
+	margin:0;
+}
+
+.center {
+	width:50%;
+	height:50vh;
+	flex: 2 2 auto;
+}
+
+.left, .right {
+	width:25%;
+	height:50vh;
+	flex: 1 1 auto;
+	display:flex;
+}
+
+.top, .bottom {
+	height:25%;
+	width:100vw;
+	flex: 4 4 auto;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}

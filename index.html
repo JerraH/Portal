@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://code.angularjs.org/1.3.10/angular.js"></script>
+	<script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="searchApp" ng-controller="myController">
+	<div class="container">
+	   <div class="centerbox">
+	      <div class="searchbox">
+		 	 <h2>Find Inspiration Here</h2>
+		 	 <div id="{{typeofsearch.searchlocation}}">
+		 		<form name="{{typeofsearch.searchlocation}}" ng-submit="{{typeofsearch.searchlocation}}()" >
+		 			<input name="search" type="text" ng-model="search">
+		 			<select name="typeofsearch" type="select" ng-model="typeofsearch.searchlocation">
+		 				<option ng-repeat="option in typeofsearch.availableOptions" value="{{option.value}}">{{option.name}}
+		 				</option>
+		 			</select>
+		 			<div class="typecategories" ng-switch="typeofsearch.searchlocation">
+			 			<div id="referenceForm" ng-switch-when="reference">
+			 				<select name="colors" ng-model="colorChoice.color">
+			 					<option ng-repeat="color in colorChoice.colorOptions" value="{{color.name}}">{{color.name}}
+			 					</option>
+			 				</select>
+			 				<select name="category" ng-model="$scope.categoryIn">
+			 					<option ng-repeat="category in $scope.categories" value="{{category.name}}">{{category.name}}</option>
+			 				</select>
+			 			</div> <!-- referenceform -->
+			 			
+			 			<div id="InspoForm" ng-switch-when="inspiration">
+			 				<select name="artstyles" ng-model="artstyles.drawstyle">
+			 					<option ng-repeat="style in artstyles.styleOptions" value="{{style.name}}">
+			 						{{style.name}}
+			 					</option>
+			 				</select>
+			 			</div> <!-- inspoform -->
+			 			<div id="paletteForm" ng-switch-when="palettes">
+			 				<select name="colors" ng-model="colorChoice.color">
+			 					<option ng-repeat="color in colorChoice.colorOptions" value="{{color.name}}">{{color.name}}
+			 					</option>
+			 				</select>
+			 			</div> <!-- paletteform -->
+			 		</div> <!-- typecategories -->
+		 			<input type="submit" value="submit">
+		 		</form>
+		 	 </div> <!-- inspo -->
+	      </div> <!-- searchbox -->
+	   </div> <!-- centerbox -->
+	 	<div class="bg">
+	 	  <div class="top">
+	 	  	<div class="picture" id="box1"></div>
+	 	  	<div class="picture" id="box2"></div>
+	 	  	<div class="picture" id="box3"></div>
+	 	  </div>
+	 	  <div class="left">
+	 	  	<div class="picture" id="box4"></div>
+	 	  	<div class="picture" id="box5"></div>
+	 	  	<div class="picture" id="box6"></div>
+	 	  </div>
+	 	   <div class="center">
+	 	  	<div class="giantbox"></div>
+	 	  </div>
+	 	  <div class="right">
+	 	  	<div class="picture" id="box7"></div>
+	 	  	<div class="picture" id="box8"></div>
+	 	  	<div class="picture" id="box9"></div>
+	 	  </div>
+	 	  <div class="bottom">
+	 	  	<div class="picture" id="box10"></div>
+	 	  	<div class="picture" id="box11"></div>
+	 	  </div>
+	    </div> <!-- hidden -->
+	</div> <!-- container -->
+	
+</body>
+</html>
